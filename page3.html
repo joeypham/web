@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Joey's Blog</title>
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lora&family=Roboto&display=swap');
+		
+		/*=========CSS reset===========*
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		
+		strong { font-weight: bold; }
+		
+		em { font-style: italic; }
+		/* End of CSS reset */
+		
+		
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a1428/*#eff5ff*/;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+		
+		#wrapper {
+			width: 80%;
+			margin: auto;
+			background-color: #eff5ff/*#0a1428*/;
+			
+		}
+		
+        header {
+            background-color: #4a90e2;
+			background: url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/709c6caa7e68aa66534b91282b6f8c3012e7ec9d-3840x1168.png?auto=format&fit=fill&q=80&w=1920') top center / cover no-repeat;
+            color: white;
+            padding: 300px;
+            text-align: center;
+        }
+		
+		nav {
+			padding: 20px;
+			background-color: black;
+		}
+		
+		#feature {
+            background-color: #fff9ef;
+			width:85%;
+			margin: 50px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+		}
+		
+		#feature h2 {
+			margin-bottom: 2%;
+			border: none;
+		}
+		
+		.feature-img {
+			float: left;
+			width: 37%;
+		}
+		
+		.feature-text {
+			float: left;
+			width: 60%;
+			
+		}
+		
+		#sidebar {
+			width: 21%;
+			background-color: #fff;
+            margin: auto auto auto 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			float: left;
+		}
+		
+		.side-figure {
+			margin: auto;
+		}
+
+		#main-content {
+			width: 73%;
+            background-color: #fff;
+            margin: auto 20px 20px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			float: right;
+		}
+		
+		.main-figure {
+			width: 35%;
+			margin-right: 9%;
+		}
+		
+		h1 {
+			font-size: 75px;
+            color: #fff;
+            font-weight: bold;
+            font-family: 'Comfortaa', serif;
+            text-transform: capitalize;
+			text-align: center;
+			text-align: center;
+			text-shadow: 2px 2px #000;
+        }
+		
+        h2 {
+            font-size: 40px;
+            color: #333;
+            font-weight: bold;
+            font-family: 'Lora', serif;
+            text-transform: capitalize;
+			text-align: center;
+			border-bottom: solid 2px grey;
+        }
+		
+		h3 {
+            font-size: 30px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+		
+		h4 {
+            font-size: 25px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+		
+		h5 {
+            font-size: 20px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+
+        p {
+            font-size: 16px;
+			line-height: 2;
+            color: #666;
+            font-family: "Roboto", system-ui;
+			font-weight: 400;
+			font-style: normal;
+			margin: 0 20px;
+        }
+
+        time {
+            color: #888;
+            font-size: 14px;
+        }
+
+        footer {
+			background: #292929;
+			font-family: Arial, sans-serif;
+			padding: 24px;
+			margin: 0;
+			color: #7e7e7e;
+			font-weight: 700;
+			font-size: 13px;
+			letter-spacing: .08em;
+			text-align: center;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			clear: right;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+		
+		
+		figure {
+			padding: auto;
+			margin: auto;
+		}
+
+		figcaption {
+			background-color: black;
+			color: white;
+			font-style: italic;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 20px;
+			line-height: 28px;
+			font-weight: 700;
+			padding: 13px 16px;
+		}
+		
+		#navcontainer ul {
+			margin: 0;
+			list-style-type: none;
+			color: #FFF;
+			width: 100%;
+			font: bold 24px/18px Georgia, "Times New Roman", Times, serif;
+			text-align: center;
+		}
+		#navlist {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#navlist li {
+			display: inline;
+			text-shadow: 2px 1px #000;
+		}
+
+		#navlist li a {
+			text-decoration: none;
+			color: #FFF;
+			padding: .2em 1em;
+		}
+		
+		#navlist li a#current {
+			color: #FFCC00;
+			font-style: italic;
+		}
+		
+		#navlist li a:hover {
+			color: #ffe6e6;
+            text-decoration: none;
+		}
+		
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		
+		table, th, td {
+			border: 1px solid gray;
+		}
+		
+		th, td {
+			padding: 10px;
+			text-align: left;
+		}
+		
+		thead {
+			background-color: #ffe6e6;
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		tfoot, tfoot th {
+			background-color: #f2f2f2;
+			text-align: right;
+		}
+		
+		cite {
+			font-style: italic;
+		}
+		
+		blockquote {
+			background: #f9f9f9;
+			border-left: 10px solid #ccc;
+			margin: 1.5em 10px;
+			padding: 0.5em 10px;
+			quotes: "\201C""\201D""\2018""\2019";
+		}
+		
+		blockquote:before {
+			color: #ccc;
+			content: open-quote;
+			font-size: 4em;
+			line-height: 0.1em;
+			margin-right: 0.25em;
+			vertical-align: -0.4em;
+		}
+		
+		blockquote p {
+			display: inline;
+		}
+		
+		blockquote span {
+			display:block;
+			color:#333333;
+			font-style: italic;
+			font-weight: bold;
+			margin-top:1em;
+			text-align: right;
+		}
+		
+		ul {
+			list-style-type: square;
+			font-size: 16px;
+			line-height: 2;
+			color: #666;
+			font-family: "Roboto", system-ui;
+			font-weight: 400;
+			font-style: normal;
+			margin-left: 40px;
+		}
+		
+		li li {
+			list-style-type: disc;
+		}
+		
+		li li li {
+			list-style-type: circle;
+		}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Welcome to Joey's Blog</h1>
+        </header>
+
+        <nav>
+            <div id="navcontainer">
+                <ul id="navlist">
+                    <li><a href="index.html">League of Legends</a></li>
+                    <li><a href="page2.html">Champion Basics</a></li>
+                    <li><a href="#" id="current">Champion List</a></li>
+                    <li><a href="page4.html">Teamp Comp and The Five Roles</a></li>
+                    <li><a href="page5.html">Additional Beginner Resources</a></li>
+                </ul>
+            </div>
+        </nav>
+
+		<div id="feature">
+			<img class="feature-img" src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/19652822ce5fbb3ea7db25b6c7f7b83db934e044-1920x1080.jpg?auto=format&fit=fill&q=80&w=1184" />
+			
+			<h2>2024 Gameplay Preview</h2>
+			<p class="feature-text">The Season Start 2024 gameplay changes will start hitting PBE today! Before they’re out, we wanted to talk you through the changes you’ll see coming to Summoner’s Rift. We’re eager to hear your feedback, so make sure to hop onto PBE to test these updates out and give us your feedback!
+			<br />
+			<strong>Housekeeping Note:</strong> Things will be in a pretty early state when you first see them, so expect changes to things like visuals, item names, effect names, stat values, and more as we continue to refine these items while they’re on PBE. Barring massive table-flips, this preview page won't be updated after publishing. Fear not though, when the 14.1 patch notes come out and the changes go live in January they'll have all the final details as usual.
+			<br />
+			<strong>Disclaimer:</strong> While quite a few of these changes are Void-related, we wanted to let you all know that <strong>there will not be a Void event in 2024</strong> (sorry Nickyboi).
+			<br />
+		One last note, we’ll have a few additional dev blogs coming out over the next two weeks to talk about these changes in much more detail than we do here, so make sure to keep an eye out for those!
+			<a href="https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/" target="_blank"> Read more here!</a></p>
+		</div>
+
+        <div id="sidebar">
+            <figure>
+                <img class="side-figure" src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9d7c852f03f09bd32aab843a98f3a4c371afa3ba-496x560.jpg?auto=format&fit=fill&q=80&w=1184" />
+                <figcaption>
+                    Champion: Elise <br />
+                    Role: Assassin / Mage <br />
+                    Difficulty: High
+                </figcaption>
+            </figure>
+        </div>
+
+        <div id="main-content">
+            <main>
+                <article>
+                    <h2>League of Legends Champion List</h2>
+                    <br />
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">League of Legends Champions</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th colspan="3"><cite>Champion information and images sourced from <a href="https://www.leagueoflegends.com/en-us/champions/" target="_blank">League of Legends - Champions</a>.</cite></th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" alt="Aatrox" height="auto" />
+                                        <figcaption>Aatrox</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg" alt="Ahri" height="auto" />
+                                        <figcaption>Ahri</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg" alt="Akali" height="auto" />
+                                        <figcaption>Akali</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akshan_0.jpg" alt="Akshan" height="auto" />
+                                        <figcaption>Akshan</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg" alt="Alistar" height="auto" />
+                                        <figcaption>Alistar</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg" alt="Amumu" height="auto" />
+                                        <figcaption>Amumu</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Anivia_0.jpg" alt="Anivia" height="auto" />
+                                        <figcaption>Anivia</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg" alt="Annie" height="auto" />
+                                        <figcaption>Annie</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg" alt="Aphelios" height="auto" />
+                                        <figcaption>Aphelios</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg" alt="Ashe" height="auto" />
+                                        <figcaption>Ashe</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg" alt="Aurelion Sol" height="auto" />
+                                        <figcaption>Aurelion Sol</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Azir_0.jpg" alt="Azir" height="auto" />
+                                        <figcaption>Azir</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Bard_0.jpg" alt="Bard" />
+                                        <figcaption>Bard</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Belveth_0.jpg" alt="Bel'Veth" />
+                                        <figcaption>Bel'Veth</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg" alt="Blitzcrank" />
+                                        <figcaption>Blitzcrank</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg" alt="Brand" />
+                                        <figcaption>Brand</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg" alt="Braum" />
+                                        <figcaption>Braum</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg" alt="Caitlyn" />
+                                        <figcaption>Caitlyn</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg" alt="Camille" />
+                                        <figcaption>Camille</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Cassiopeia_0.jpg" alt="Cassiopeia" />
+                                        <figcaption>Cassiopeia</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Chogath_0.jpg" alt="Cho'Gath" />
+                                        <figcaption>Cho'Gath</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Corki_0.jpg" alt="Corki" />
+                                        <figcaption>Corki</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg" alt="Darius" />
+                                        <figcaption>Darius</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Diana_0.jpg" alt="Diana" />
+                                        <figcaption>Diana</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg" alt="Draven" />
+                                        <figcaption>Draven</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_0.jpg" alt="Dr. Mundo" />
+                                        <figcaption>Dr. Mundo</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_0.jpg" alt="Ekko" />
+                                        <figcaption>Ekko</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Elise_0.jpg" alt="Elise" />
+                                        <figcaption>Elise</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg" alt="Evelynn" />
+                                        <figcaption>Evelynn</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg" alt="Ezreal" />
+                                        <figcaption>Ezreal</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiddlesticks_0.jpg" alt="Fiddlesticks" />
+                                        <figcaption>Fiddlesticks</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg" alt="Fiora" />
+                                        <figcaption>Fiora</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fizz_0.jpg" alt="Fizz" />
+                                        <figcaption>Fizz</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Galio_0.jpg" alt="Galio" />
+                                        <figcaption>Galio</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gangplank_0.jpg" alt="Gangplank" />
+                                        <figcaption>Gangplank</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg" alt="Garen" />
+                                        <figcaption>Garen</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gnar_0.jpg" alt="Gnar" />
+                                        <figcaption>Gnar</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg" alt="Gragas" />
+                                        <figcaption>Gragas</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg" alt="Graves" />
+                                        <figcaption>Graves</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_0.jpg" alt="Gwen" />
+                                        <figcaption>Gwen</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg" alt="Hecarim" />
+                                        <figcaption>Hecarim</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_0.jpg" alt="Heimerdinger" />
+                                        <figcaption>Heimerdinger</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Illaoi_0.jpg" alt="Illaoi" />
+                                        <figcaption>Illaoi</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg" alt="Irelia" />
+                                        <figcaption>Irelia</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg" alt="Ivern" />
+                                        <figcaption>Ivern</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_0.jpg" alt="Janna" />
+                                        <figcaption>Janna</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/JarvanIV_0.jpg" alt="Jarvan IV" />
+                                        <figcaption>Jarvan IV</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jax_0.jpg" alt="Jax" />
+                                        <figcaption>Jax</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jayce_0.jpg" alt="Jayce" />
+                                        <figcaption>Jayce</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_0.jpg" alt="Jhin" />
+                                        <figcaption>Jhin</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="Jinx" />
+                                        <figcaption>Jinx</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg" alt="Kai'Sa" />
+                                        <figcaption>Kai'Sa</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kalista_0.jpg" alt="Kalista" />
+                                        <figcaption>Kalista</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg" alt="Karma" />
+                                        <figcaption>Karma</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karthus_0.jpg" alt="Karthus" />
+                                        <figcaption>Karthus</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kassadin_0.jpg" alt="Kassadin" />
+                                        <figcaption>Kassadin</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg" alt="Katarina" />
+                                        <figcaption>Katarina</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_0.jpg" alt="Kayle" />
+                                        <figcaption>Kayle</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayn_0.jpg" alt="Kayn" />
+                                        <figcaption>Kayn</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg" alt="Kennen" />
+                                        <figcaption>Kennen</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Khazix_0.jpg" alt="Kha'Zix" />
+                                        <figcaption>Kha'Zix</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg" alt="Kindred" />
+                                        <figcaption>Kindred</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kled_0.jpg" alt="Kled" />
+                                        <figcaption>Kled</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KogMaw_0.jpg" alt="Kog'Maw" />
+                                        <figcaption>Kog'Maw</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg" alt="LeBlanc" />
+                                        <figcaption>LeBlanc</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg" alt="Lee Sin" />
+                                        <figcaption>Lee Sin</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg" alt="Leona" />
+                                        <figcaption>Leona</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lillia_0.jpg" alt="Lillia" />
+                                        <figcaption>Lillia</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg" alt="Lissandra" />
+                                        <figcaption>Lissandra</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucian_0.jpg" alt="Lucian" />
+                                        <figcaption>Lucian</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg" alt="Lulu" />
+                                        <figcaption>Lulu</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg" alt="Lux" />
+                                        <figcaption>Lux</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg" alt="Malphite" />
+                                        <figcaption>Malphite</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg" alt="Malzahar" />
+                                        <figcaption>Malzahar</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg" alt="Maokai" />
+                                        <figcaption>Maokai</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MasterYi_0.jpg" alt="Master Yi" />
+                                        <figcaption>Master Yi</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_0.jpg" alt="Miss Fortune" />
+                                        <figcaption>Miss Fortune</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg" alt="Mordekaiser" />
+                                        <figcaption>Mordekaiser</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Morgana_0.jpg" alt="Morgana" />
+                                        <figcaption>Morgana</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg" alt="Nami" />
+                                        <figcaption>Nami</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg" alt="Nasus" />
+                                        <figcaption>Nasus</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nautilus_0.jpg" alt="Nautilus" />
+                                        <figcaption>Nautilus</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg" alt="Neeko" />
+                                        <figcaption>Neeko</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nidalee_0.jpg" alt="Nidalee" />
+                                        <figcaption>Nidalee</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nocturne_0.jpg" alt="Nocturne" />
+                                        <figcaption>Nocturne</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg" alt="Nunu & Willump" />
+                                        <figcaption>Nunu & Willump</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Olaf_0.jpg" alt="Olaf" />
+                                        <figcaption>Olaf</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg" alt="Orianna" />
+                                        <figcaption>Orianna</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg" alt="Ornn" />
+                                        <figcaption>Ornn</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg" alt="Pantheon" />
+                                        <figcaption>Pantheon</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Poppy_0.jpg" alt="Poppy" />
+                                        <figcaption>Poppy</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg" alt="Pyke" />
+                                        <figcaption>Pyke</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg" alt="Qiyana" />
+                                        <figcaption>Qiyana</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg" alt="Quinn" />
+                                        <figcaption>Quinn</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_0.jpg" alt="Rakan" />
+                                        <figcaption>Rakan</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg" alt="Rammus" />
+                                        <figcaption>Rammus</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_0.jpg" alt="Rek'Sai" />
+                                        <figcaption>Rek'Sai</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rell_0.jpg" alt="Rell" />
+                                        <figcaption>Rell</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renata_0.jpg" alt="Renata" />
+                                        <figcaption>Renata</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renekton_0.jpg" alt="Renekton" />
+                                        <figcaption>Renekton</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg" alt="Rengar" />
+                                        <figcaption>Rengar</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg" alt="Riven" />
+                                        <figcaption>Riven</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rumble_0.jpg" alt="Rumble" />
+                                        <figcaption>Rumble</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg" alt="Ryze" />
+                                        <figcaption>Ryze</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Samira_0.jpg" alt="Samira" />
+                                        <figcaption>Samira</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sejuani_0.jpg" alt="Sejuani" />
+                                        <figcaption>Sejuani</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Senna_0.jpg" alt="Senna" />
+                                        <figcaption>Senna</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg" alt="Seraphine" />
+                                        <figcaption>Seraphine</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg" alt="Sett" />
+                                        <figcaption>Sett</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg" alt="Shaco" />
+                                        <figcaption>Shaco</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shen_0.jpg" alt="Shen" />
+                                        <figcaption>Shen</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg" alt="Shyvana" />
+                                        <figcaption>Shyvana</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Singed_0.jpg" alt="Singed" />
+                                        <figcaption>Singed</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg" alt="Sion" />
+                                        <figcaption>Sion</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sivir_0.jpg" alt="Sivir" />
+                                        <figcaption>Sivir</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Skarner_0.jpg" alt="Skarner" />
+                                        <figcaption>Skarner</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sona_0.jpg" alt="Sona" />
+                                        <figcaption>Sona</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Soraka_0.jpg" alt="Soraka" />
+                                        <figcaption>Soraka</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Swain_0.jpg" alt="Swain" />
+                                        <figcaption>Swain</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sylas_0.jpg" alt="Sylas" />
+                                        <figcaption>Sylas</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg" alt="Syndra" />
+                                        <figcaption>Syndra</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TahmKench_0.jpg" alt="Tahm Kench" />
+                                        <figcaption>Tahm Kench</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taliyah_0.jpg" alt="Taliyah" />
+                                        <figcaption>Taliyah</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Talon_0.jpg" alt="Talon" />
+                                        <figcaption>Talon</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taric_0.jpg" alt="Taric" />
+                                        <figcaption>Taric</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg" alt="Teemo" />
+                                        <figcaption>Teemo</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg" alt="Thresh" />
+                                        <figcaption>Thresh</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tristana_0.jpg" alt="Tristana" />
+                                        <figcaption>Tristana</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Trundle_0.jpg" alt="Trundle" />
+                                        <figcaption>Trundle</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg" alt="Tryndamere" />
+                                        <figcaption>Tryndamere</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg" alt="Twisted Fate" />
+                                        <figcaption>Twisted Fate</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Twitch_0.jpg" alt="Twitch" />
+                                        <figcaption>Twitch</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Udyr_0.jpg" alt="Udyr" />
+                                        <figcaption>Udyr</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Urgot_0.jpg" alt="Urgot" />
+                                        <figcaption>Urgot</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Varus_0.jpg" alt="Varus" />
+                                        <figcaption>Varus</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg" alt="Vayne" />
+                                        <figcaption>Vayne</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Veigar_0.jpg" alt="Veigar" />
+                                        <figcaption>Veigar</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Velkoz_0.jpg" alt="Vel'Koz" />
+                                        <figcaption>Vel'Koz</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg" alt="Vi" />
+                                        <figcaption>Vi</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viktor_0.jpg" alt="Viktor" />
+                                        <figcaption>Viktor</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vladimir_0.jpg" alt="Vladimir" />
+                                        <figcaption>Vladimir</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Volibear_0.jpg" alt="Volibear" />
+                                        <figcaption>Volibear</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg" alt="Warwick" />
+                                        <figcaption>Warwick</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MonkeyKing_0.jpg" alt="Wukong" />
+                                        <figcaption>Wukong</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xayah_0.jpg" alt="Xayah" />
+                                        <figcaption>Xayah</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg" alt="Xerath" />
+                                        <figcaption>Xerath</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/XinZhao_0.jpg" alt="Xin Zhao" />
+                                        <figcaption>Xin Zhao</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg" alt="Yasuo" />
+                                        <figcaption>Yasuo</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg" alt="Yone" />
+                                        <figcaption>Yone</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yorick_0.jpg" alt="Yorick" />
+                                        <figcaption>Yorick</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg" alt="Yuumi" />
+                                        <figcaption>Yuumi</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg" alt="Zac" />
+                                        <figcaption>Zac</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg" alt="Zed" />
+                                        <figcaption>Zed</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zeri_0.jpg" alt="Zeri" />
+                                        <figcaption>Zeri</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ziggs_0.jpg" alt="Ziggs" />
+                                        <figcaption>Ziggs</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zilean_0.jpg" alt="Zilean" />
+                                        <figcaption>Zilean</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg" alt="Zoe" />
+                                        <figcaption>Zoe</figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zyra_0.jpg" alt="Zyra" />
+                                        <figcaption>Zyra</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<br />
+					<p><cite>Source:
+					<ul>
+						<li><a href="https://mobalytics.gg/blog/absolute-beginners-guide-to-league-of-legends/" target="_blank">MOBALYTIC BLOG</a>.</li>
+						<li><a href="https://nfhs.org/media/1020428/what-is-league-of-legends_.pdf" target="_blank">https://nfhs.org/media/1020428/what-is-league-of-legends_.pdf</a></li>
+						<li><a href="https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/" target="_blank">https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/</a></li>
+					</ul>
+						</cite></p>
+					<br />
+					<i><time datetime="2024-10-17 1:00">Posted on October 17th, 2024, 1:00am</time></i>
+                </article>
+            </main>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Joey's Blog</p>
+        </footer>
+    </div>
+</body>
+
+</html>

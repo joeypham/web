@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Joey's Blog</title>
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lora&family=Roboto&display=swap');
+		
+		/*=========CSS reset===========*
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		
+		strong { font-weight: bold; }
+		
+		em { font-style: italic; }
+		/* End of CSS reset */
+		
+		
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a1428/*#eff5ff*/;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+		
+		#wrapper {
+			width: 80%;
+			margin: auto;
+			background-color: #eff5ff/*#0a1428*/;
+			
+		}
+		
+        header {
+            background-color: #4a90e2;
+			background: url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/709c6caa7e68aa66534b91282b6f8c3012e7ec9d-3840x1168.png?auto=format&fit=fill&q=80&w=1920') top center / cover no-repeat;
+            color: white;
+            padding: 300px;
+            text-align: center;
+        }
+		
+		nav {
+			padding: 20px;
+			background-color: black;
+		}
+		
+		#feature {
+            background-color: #fff9ef;
+			width:85%;
+			margin: 50px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+		}
+		
+		#feature h2 {
+			margin-bottom: 2%;
+			border: none;
+		}
+		
+		.feature-img {
+			float: left;
+			width: 37%;
+		}
+		
+		.feature-text {
+			float: left;
+			width: 60%;
+			
+		}
+		
+		#sidebar {
+			width: 21%;
+			background-color: #fff;
+            margin: auto auto auto 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			float: left;
+		}
+		
+		.side-figure {
+			margin: auto;
+		}
+
+		#main-content {
+			width: 73%;
+            background-color: #fff;
+            margin: auto 20px 20px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			float: right;
+		}
+		
+		.main-figure {
+			width: 35%;
+			margin-right: 9%;
+		}
+		
+		h1 {
+			font-size: 75px;
+            color: #fff;
+            font-weight: bold;
+            font-family: 'Comfortaa', serif;
+            text-transform: capitalize;
+			text-align: center;
+			text-align: center;
+			text-shadow: 2px 2px #000;
+        }
+		
+        h2 {
+            font-size: 40px;
+            color: #333;
+            font-weight: bold;
+            font-family: 'Lora', serif;
+            text-transform: capitalize;
+			text-align: center;
+			border-bottom: solid 2px grey;
+        }
+		
+		h3 {
+            font-size: 30px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+		
+		h4 {
+            font-size: 25px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+		
+		h5 {
+            font-size: 20px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+
+        p {
+            font-size: 16px;
+			line-height: 2;
+            color: #666;
+            font-family: "Roboto", system-ui;
+			font-weight: 400;
+			font-style: normal;
+			margin: 0 20px;
+        }
+
+        time {
+            color: #888;
+            font-size: 14px;
+        }
+
+        footer {
+			background: #292929;
+			font-family: Arial, sans-serif;
+			padding: 24px;
+			margin: 0;
+			color: #7e7e7e;
+			font-weight: 700;
+			font-size: 13px;
+			letter-spacing: .08em;
+			text-align: center;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			clear: right;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+		
+		
+		figure {
+			padding: auto;
+			margin: auto;
+		}
+
+		figcaption {
+			background-color: black;
+			color: white;
+			font-style: italic;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 20px;
+			line-height: 28px;
+			font-weight: 700;
+			padding: 13px 16px;
+		}
+		
+		#navcontainer ul {
+			margin: 0;
+			list-style-type: none;
+			color: #FFF;
+			width: 100%;
+			font: bold 24px/18px Georgia, "Times New Roman", Times, serif;
+			text-align: center;
+		}
+		#navlist {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#navlist li {
+			display: inline;
+			text-shadow: 2px 1px #000;
+		}
+
+		#navlist li a {
+			text-decoration: none;
+			color: #FFF;
+			padding: .2em 1em;
+		}
+		
+		#navlist li a#current {
+			color: #FFCC00;
+			font-style: italic;
+		}
+		
+		#navlist li a:hover {
+			color: #ffe6e6;
+            text-decoration: none;
+		}
+		
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		
+		table, th, td {
+			border: 1px solid gray;
+		}
+		
+		th, td {
+			padding: 10px;
+			text-align: left;
+		}
+		
+		thead {
+			background-color: #ffe6e6;
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		tfoot, tfoot th {
+			background-color: #f2f2f2;
+			text-align: right;
+		}
+		
+		cite {
+			font-style: italic;
+		}
+		
+		blockquote {
+			background: #f9f9f9;
+			border-left: 10px solid #ccc;
+			margin: 1.5em 10px;
+			padding: 0.5em 10px;
+			quotes: "\201C""\201D""\2018""\2019";
+		}
+		
+		blockquote:before {
+			color: #ccc;
+			content: open-quote;
+			font-size: 4em;
+			line-height: 0.1em;
+			margin-right: 0.25em;
+			vertical-align: -0.4em;
+		}
+		
+		blockquote p {
+			display: inline;
+		}
+		
+		blockquote span {
+			display:block;
+			color:#333333;
+			font-style: italic;
+			font-weight: bold;
+			margin-top:1em;
+			text-align: right;
+		}
+		
+		ul {
+			list-style-type: square;
+			font-size: 16px;
+			line-height: 2;
+			color: #666;
+			font-family: "Roboto", system-ui;
+			font-weight: 400;
+			font-style: normal;
+			margin-left: 40px;
+		}
+		
+		li li {
+			list-style-type: disc;
+		}
+		
+		li li li {
+			list-style-type: circle;
+		}
+    </style>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>Welcome to Joey's Blog</h1>
+		</header>
+		
+		<nav>
+			<div id="navcontainer">
+				<ul id="navlist">
+					<li><a href="#" id="current">League of Legends</a></li>
+                    <li><a href="page2.html">Champion Basics</a></li>
+                    <li><a href="page3.html">Champion List</a></li>
+                    <li><a href="page4.html">Teamp Comp and The Five Roles</a></li>
+                    <li><a href="page5.html">Additional Beginner Resources</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div id="feature">
+			<img class="feature-img" src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/19652822ce5fbb3ea7db25b6c7f7b83db934e044-1920x1080.jpg?auto=format&fit=fill&q=80&w=1184" />
+			
+			<h2>2024 Gameplay Preview</h2>
+			<p class="feature-text">The Season Start 2024 gameplay changes will start hitting PBE today! Before they’re out, we wanted to talk you through the changes you’ll see coming to Summoner’s Rift. We’re eager to hear your feedback, so make sure to hop onto PBE to test these updates out and give us your feedback!
+			<br />
+			<strong>Housekeeping Note:</strong> Things will be in a pretty early state when you first see them, so expect changes to things like visuals, item names, effect names, stat values, and more as we continue to refine these items while they’re on PBE. Barring massive table-flips, this preview page won't be updated after publishing. Fear not though, when the 14.1 patch notes come out and the changes go live in January they'll have all the final details as usual.
+			<br />
+			<strong>Disclaimer:</strong> While quite a few of these changes are Void-related, we wanted to let you all know that <strong>there will not be a Void event in 2024</strong> (sorry Nickyboi).
+			<br />
+		One last note, we’ll have a few additional dev blogs coming out over the next two weeks to talk about these changes in much more detail than we do here, so make sure to keep an eye out for those!
+			<a href="https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/" target="_blank"> Read more here!</a></p>
+		</div>
+		
+		<div id="sidebar">
+			<figure>
+				<img class="side-figure" src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f7ad13d4cc98803ddfcf53c008a1a102b8e0f1a7-496x560.jpg" />
+				<figcaption>Champion: Diana <br />
+							Role: Fighter / Assassin <br />
+							Difficulty: Medium
+				</figcaption>
+			</figure>
+		</div>
+		
+		<div id="main-content">
+			<main>
+				<article>
+					<h2>What is League of Legends?</h2>
+					<p>League of Legends is a multiplayer online battle arena, also known as a MOBA. It's been one of the most popular games of all time and currently one of the biggest esports. In a standard game of League, ten players are split into two teams of five and battle it out on a map called Summoner's Rift. Each of these players controls a single character, known as a champion.</p>
+					
+					<h3>What is a champion?</h3>
+					<p>All ten players in a League of Legends match controls a single champion. There are currently over 140 champions with new ones being continuously added over time. Every champion has special abilities and powers with unique playstyles. Before a game begins at champ select, each team takes turns selecting champions. There's a lot of strategies involved as you work with your team to create teams with champions that work well together (more on this later). Every game you play can be vastly different since every champion has their own feel and gameplan.</p>
+
+					<h3>How do you win?</h3>
+					<p>The ultimate goal of LoL is to destroy the other team's base, but it's not easy. Your enemies will do everything they can to kill you and destroy your base. Each base has a series of turrets and waves of minions that constantly spawn. If you started a game and tried to run straight to the enemy base, you'd certainly die, not just because the enemy team would be trying to stop you at all costs, but also because you may be too weak and die. League is sort of like a role-playing game (RPG) that takes place in a very short amount of time.You begin at level 1 and gradually get stronger throughout the game by gaining experience and earning gold to buy items.The two teams continually grow in power and collide. Eventually, one team is able to get the upper hand and make a final push for a victory.
+					
+					<blockquote><p>I have always been on some type of sports team, pretty much my whole life, but with esports instead of relying on physical strength, it’s more like <b>relying on critical thinking skills</b>. It's challenging but a great team to be part of!</p>
+					
+					<span>Eric B. <br /> League of Legends Player <br />Shawsheen Valley Regional High School</span>
+					</blockquote>
+
+					
+					</p>
+					
+					<h3>What is Summoner's Rift?</h3>
+					<p>This is the standard map that the professionals play on and it's where you'd be if you were trying to climb the ranked ladder.There are other maps in League, but for now, we'll focus on Summoner's Rift since it's where you'll likely be spending most of your time.
+					<img src="https://cdnportal.mobalytics.gg/production/2018/12/Basic-map.jpg" alt="" /></p>
+					<p><strong><em>Here are the basics of the Summoner's Rift map:</em></strong></p>
+					<p>There are two teams of five players: the blue team (base at bottom left corner) and the red team (base at the top right corner).To achieve victory, one team has to destroy the opposing team's Nexus (basically the core of their base).During a match, minions will continually spawn from each base's Nexus and proceed through the three lanes (the paths are shown in the graphic above).The three lanes are known as top lane, mid lane, and bot lane. In all three lanes, there are turrets which will attack enemy champions and minions.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Nexus-and-turrets.jpg" alt="" />
+					Summoners must destroy all turrets in at least one lane and then destroy the last two towers that protect a Nexus before being able to attack and destroy it.</p>
+					
+					<h3>Turrets and Inhibitors</h3>
+					<p>Destroying turrets and other structures called inhibitors rewards players with gold and allows the minion waves to push through the lane (since there aren't any turrets to stop them).Inhibitors are structures that are behind the initial turrets inside a base. If an inhibitor is destroyed, upgraded minions, called Super Minions, will spawn until an inhibitor respawns after a few minutes.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Super-minions.jpg" alt="" />
+					A team can often use the Super Minions to successfully siege a base that was previously difficult to attack and create an opportunity to push to victory.</p>
+					
+					<h3>The Fountain and Shop</h3>
+					<p>At the beginning of each game, you'll begin at your fountain. You'll revisit your fountain because it's where you'll respawn when you die and it's where your shop is located.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Fountain-and-shop.jpg" alt="" />
+					You can return to your fountain at any time during a game to heal or purchase items. All you have to do is use the Recall ability which every summoner has access to - just be careful and use it safely because you can be interrupted while casting it.</p>
+					<h3>Income and Items</h3>
+					<p>As we mentioned earlier, killing a minion, structure, or enemy champion grants players gold which can be used to purchase items at the fountain's shop.The ultimate purpose of gold is to give players to have flexibility in their stat growth and play styles. Whether you want more damage, survivability, or utility, there are a wide variety of items to fit your needs.We recommend checking out our <a href="https://cdnportal.mobalytics.gg/blog/category/lol-items/">LoL item guides series</a> if you want to learn more about what different items do and when to build them.</p>
+					<br />
+					<p><cite>Source:
+					<ul>
+						<li><a href="https://mobalytics.gg/blog/absolute-beginners-guide-to-league-of-legends/" target="_blank">MOBALYTIC BLOG</a>.</li>
+						<li><a href="https://nfhs.org/media/1020428/what-is-league-of-legends_.pdf" target="_blank">https://nfhs.org/media/1020428/what-is-league-of-legends_.pdf</a></li>
+						<li><a href="https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/" target="_blank">https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/</a></li>
+					</ul>
+						</cite></p>
+					<br />
+					<i><time datetime="2024-10-17 1:00">Posted on October 17th, 2024, 1:00am</time></i>
+				</article>
+			</main>
+		</div>
+		
+		<footer>
+			<p>&copy; 2024 Joey's Blog</p>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Joey's Blog</title>
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lora&family=Roboto&display=swap');
+		
+		/*=========CSS reset===========*
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		
+		strong { font-weight: bold; }
+		
+		em { font-style: italic; }
+		/* End of CSS reset */
+		
+		
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a1428/*#eff5ff*/;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+		
+		#wrapper {
+			width: 80%;
+			margin: auto;
+			background-color: #eff5ff/*#0a1428*/;
+			
+		}
+		
+        header {
+            background-color: #4a90e2;
+			background: url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/709c6caa7e68aa66534b91282b6f8c3012e7ec9d-3840x1168.png?auto=format&fit=fill&q=80&w=1920') top center / cover no-repeat;
+            color: white;
+            padding: 300px;
+            text-align: center;
+        }
+		
+		nav {
+			padding: 20px;
+			background-color: black;
+		}
+		
+		#feature {
+            background-color: #fff9ef;
+			width:85%;
+			margin: 50px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+		}
+		
+		#feature h2 {
+			margin-bottom: 2%;
+			border: none;
+		}
+		
+		.feature-img {
+			float: left;
+			width: 37%;
+		}
+		
+		.feature-text {
+			float: left;
+			width: 60%;
+			
+		}
+		
+		#sidebar {
+			width: 21%;
+			background-color: #fff;
+            margin: auto auto auto 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			float: left;
+		}
+		
+		.side-figure {
+			margin: auto;
+		}
+
+		#main-content {
+			width: 73%;
+            background-color: #fff;
+            margin: auto 20px 20px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			float: right;
+		}
+		
+		.main-figure {
+			width: 35%;
+			margin-right: 9%;
+		}
+		
+		h1 {
+			font-size: 75px;
+            color: #fff;
+            font-weight: bold;
+            font-family: 'Comfortaa', serif;
+            text-transform: capitalize;
+			text-align: center;
+			text-align: center;
+			text-shadow: 2px 2px #000;
+        }
+		
+        h2 {
+            font-size: 40px;
+            color: #333;
+            font-weight: bold;
+            font-family: 'Lora', serif;
+            text-transform: capitalize;
+			text-align: center;
+			border-bottom: solid 2px grey;
+        }
+		
+		h3 {
+            font-size: 30px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+		
+		h4 {
+            font-size: 25px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+		
+		h5 {
+            font-size: 20px;
+            font-weight: bold;
+			margin: 15px 0;
+            text-transform: capitalize;
+		}
+
+        p {
+            font-size: 16px;
+			line-height: 2;
+            color: #666;
+            font-family: "Roboto", system-ui;
+			font-weight: 400;
+			font-style: normal;
+			margin: 0 20px;
+        }
+
+        time {
+            color: #888;
+            font-size: 14px;
+        }
+
+        footer {
+			background: #292929;
+			font-family: Arial, sans-serif;
+			padding: 24px;
+			margin: 0;
+			color: #7e7e7e;
+			font-weight: 700;
+			font-size: 13px;
+			letter-spacing: .08em;
+			text-align: center;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			clear: right;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+		
+		
+		figure {
+			padding: auto;
+			margin: auto;
+		}
+
+		figcaption {
+			background-color: black;
+			color: white;
+			font-style: italic;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 20px;
+			line-height: 28px;
+			font-weight: 700;
+			padding: 13px 16px;
+		}
+		
+		#navcontainer ul {
+			margin: 0;
+			list-style-type: none;
+			color: #FFF;
+			width: 100%;
+			font: bold 24px/18px Georgia, "Times New Roman", Times, serif;
+			text-align: center;
+		}
+		#navlist {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#navlist li {
+			display: inline;
+			text-shadow: 2px 1px #000;
+		}
+
+		#navlist li a {
+			text-decoration: none;
+			color: #FFF;
+			padding: .2em 1em;
+		}
+		
+		#navlist li a#current {
+			color: #FFCC00;
+			font-style: italic;
+		}
+		
+		#navlist li a:hover {
+			color: #ffe6e6;
+            text-decoration: none;
+		}
+		
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		
+		table, th, td {
+			border: 1px solid gray;
+		}
+		
+		th, td {
+			padding: 10px;
+			text-align: left;
+		}
+		
+		thead {
+			background-color: #ffe6e6;
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		tfoot, tfoot th {
+			background-color: #f2f2f2;
+			text-align: right;
+		}
+		
+		cite {
+			font-style: italic;
+		}
+		
+		blockquote {
+			background: #f9f9f9;
+			border-left: 10px solid #ccc;
+			margin: 1.5em 10px;
+			padding: 0.5em 10px;
+			quotes: "\201C""\201D""\2018""\2019";
+		}
+		
+		blockquote:before {
+			color: #ccc;
+			content: open-quote;
+			font-size: 4em;
+			line-height: 0.1em;
+			margin-right: 0.25em;
+			vertical-align: -0.4em;
+		}
+		
+		blockquote p {
+			display: inline;
+		}
+		
+		blockquote span {
+			display:block;
+			color:#333333;
+			font-style: italic;
+			font-weight: bold;
+			margin-top:1em;
+			text-align: right;
+		}
+		
+		ul {
+			list-style-type: square;
+			font-size: 16px;
+			line-height: 2;
+			color: #666;
+			font-family: "Roboto", system-ui;
+			font-weight: 400;
+			font-style: normal;
+			margin-left: 40px;
+		}
+		
+		li li {
+			list-style-type: disc;
+		}
+		
+		li li li {
+			list-style-type: circle;
+		}
+    </style>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>Welcome to Joey's Blog</h1>
+		</header>
+		
+		<nav>
+			<div id="navcontainer">
+				<ul id="navlist">
+					<li><a href="index.html">League of Legends</a></li>
+                    <li><a href="#" id="current">Champion Basics</a></li>
+                    <li><a href="page3.html">Champion List</a></li>
+                    <li><a href="page4.html">Teamp Comp and The Five Roles</a></li>
+                    <li><a href="page5.html">Additional Beginner Resources</a></li>
+				</ul></p>
+			 
+		</nav>
+		
+		<div id="feature">
+			<img class="feature-img" src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/19652822ce5fbb3ea7db25b6c7f7b83db934e044-1920x1080.jpg?auto=format&fit=fill&q=80&w=1184" />
+			
+			<h2>2024 Gameplay Preview</h2>
+			<p class="feature-text">The Season Start 2024 gameplay changes will start hitting PBE today! Before they’re out, we wanted to talk you through the changes you’ll see coming to Summoner’s Rift. We’re eager to hear your feedback, so make sure to hop onto PBE to test these updates out and give us your feedback!
+			<br />
+			<strong>Housekeeping Note:</strong> Things will be in a pretty early state when you first see them, so expect changes to things like visuals, item names, effect names, stat values, and more as we continue to refine these items while they’re on PBE. Barring massive table-flips, this preview page won't be updated after publishing. Fear not though, when the 14.1 patch notes come out and the changes go live in January they'll have all the final details as usual.
+			<br />
+			<strong>Disclaimer:</strong> While quite a few of these changes are Void-related, we wanted to let you all know that <strong>there will not be a Void event in 2024</strong> (sorry Nickyboi).
+			<br />
+		One last note, we’ll have a few additional dev blogs coming out over the next two weeks to talk about these changes in much more detail than we do here, so make sure to keep an eye out for those!
+			<a href="https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/" target="_blank"> Read more here!</a></p>
+		</div>
+		 
+		
+		<div id="sidebar">
+			<figure>
+				<img class="side-figure" src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5c281ddba910f68b6b3271262eb60ec5adce09e9-496x560.jpg?auto=format&fit=fill&q=80&w=1184" />
+				<figcaption>Champion: Jayce <br />
+							Role: Marksman / Fighter <br />
+							Difficulty: Medium
+				</figcaption>
+			</figure>
+		 </div>
+		
+		<div id="main-content">
+			<main>
+				<article>
+					<h2>LoL Champion Basics</h2>
+					<p>Now that we understand the basics of the map, let's get back to talking about champions. Champions are the heart and soul of League of Legends as they're often what players resonate with most.While Summoner's Rift stays constant, the different combinations of champions that are chosen by the ten players in game can create vastly different rhythms and feels.Right now there are currently over 140 champions, each of them representing a different playstyle and experience.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/all-champions.jpg"/>
+					Some are simple and easy to play while others may take a hundred games to master. Whether you like dealing damage from afar, brawling at close quarters, or helping your team with utility, there's a champion for you.In the next few sections, we'll discuss different aspects of champions, such as their abilities, stats, and scaling.</p>
+					
+					<h3>Auto-attacks and Abilities</h3>
+					<p>Every champion has auto-attacks and abilities at their disposal. Auto-attacks, also known as "basic attacks" occur when a player right clicks on a target. Doing so will cause a champion to continually attack a target until it dies.Abilities are cast using Q, W, E, and R. Every champion has abilities that are unique to them for each of these buttons. Here's Ashe's W, Volley, in action below:
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Ashe-skillshot.jpg"/> 
+					All champions also have access to two abilities, using D and F, called Summoner Spells. These are up to a player's personal preference, we'll discuss these later on.Lastly, champions can also cast abilities from items such as Redemption and Tiamat, using the number keys, 1-7.</p>
+					
+					<h3>Champion Stats</h3>
+					<p>A major aspect that sets champions apart is the distribution of their stats. Stats represent a champion's make up as far as how hard they are to kill, how much damage they do, and how fast they move or attack.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Champ-stats-Ashe.jpg"/>
+					From left to right: attack damage, ability power, armor, magic resist, attack speed, ability haste, critical strike chance, movement speed.For the purpose's of this beginner guide, we won't be getting too technical about stats. Here are the basics:</p>
+					 
+						<h4>Health (indicated by a green bar)</h4>
+						<ul>
+							<li>Health represents the amount of damage you can take before dying and being sent to your fountain.</li>
+						</ul></p>
+						
+						<h4>Ability Resources: Mana, Energy, and others</h4>
+						<ul>
+							<li>Abilities cost resources in order to cast them, most champions use mana, energy, or fury.</li>
+							<li>The majority of champions, such as Lux and Vel'Koz, use mana.</li>
+							<li>Mana is indicated by a blue bar below the health bar and regenerates over time.</li>
+							<li>Champions such as Akali and Kennen use energy.</li>
+							<li>Energy is indicated by a yellow bar and also regenerates over time but at a much faster rate. These champions often have ways to get energy back as well, such as by auto-attacking.</li>
+							<li>The tradeoff is that unlike mana, you cannot increase the amount of energy you have through buying items.</li>
+							<li>Other champions use other sources, such as their health, fury, rage, or courage.</li>
+							<li>Using health is straightforward, your champion basically takes damage in order to cast their spell.</li>
+							<li>Fury, rage, and courage, are dependent on their champions. Be sure to check them out for more details.</li>
+						</ul></p>
+						
+						<h4>Attack Damage (AD)</h4>
+						<ul>
+							<li>Attack damage, also known as physical damage, represents the damage dealt by basic auto-attacks.</li>
+							<li>Depending on a champion, AD can also empower abilities.</li>
+							<li>Numbers from abilities and items that refer to attack damage are displayed as orange.</li>
+						</ul></p>
+						
+						<h4>Ability Power (AP)</h4>
+						<ul>
+							<li>Ability power primarily makes your abilities (QWER) more powerful, however, AP can also strengthen some items and runes.</li>
+							<li>Numbers from abilities and items that refer to ability power are displayed as green.</li>
+						</ul></p>
+						
+						<h4>Armor</h4>
+						<ul>
+							<li>Armor is a defensive stat that mitigates physical damage. Building it will help you survive against champions with a lot of attack damage.</li>
+						</ul></p>
+						
+						<h4>Magic Resist (MR)</h4>
+						<ul>
+							<li>You probably guessed it, but magic resist is the counterpart to armor that mitigates damage from ability power.</li>
+						</ul></p>
+						
+						<h4>Attack Speed (AS)</h4>
+						<ul>
+							<li>Attack speed represents how fast your champion auto-attacks. In general, this is a good combination with attack damage if you're looking to increase your physical damage output.</li>
+						</ul></p>
+						
+						<h4>Ability Haste</h4>
+						<ul>
+							<li>Abilities have "cooldowns" representing how long it will be before you can cast it again. Items that give you ability haste allow you to cast abilities more often.</li>
+						</ul></p>
+						
+						<h4>Critical Strike Chance</h4>
+						<ul>
+							<li>This stat represents your chance of landing a critical strike - critical strikes cause your auto-attacks to deal double its damage.</li>
+							<li>For example, if you have 50% crit chance, your attacks will likely crit 50% of the time. If you have 100% crit chance, they will crit every time.</li>
+						</ul></p>
+						
+						<h4>Movement Speed (MS)</h4>
+						<ul>
+							<li>Movement speed represents how fast your champion moves around the map. This can be increased with abilities and items such as boots.</li>
+						</ul></p>
+						
+					<h3>Experience and Leveling up a Champion</h3>
+					<p>In League of Legends, every champion starts at level 1 and continues to level up until the max of level 18.Champions gain experience by farming minions and jungle camps or killing (or assisting in killing) champions.Note that killing jungle camps or monsters will only provide experience for the player who landed the killing blow.Destroying turrets and inhibitors grants experience to a whole team globally.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Experience-range.jpg"/>
+					Even at this range, Aurelion Sol will get experience when the minion dies.You can also gain experience by being within range of enemy minions or enemy champions dying. This radius is about equal to around 3x a champion's auto-attack (exactly 1600 range).Gaining levels and experiences allows champions to grow in power. While buying items allow champions to have freedom in choosing which stats to gain, gaining levels activates predetermined increases to a champion's stats.For example, at level 1, Ashe will have around 539 base hp. At level 18, she'll have 1984. This growth applies to health, health regen, mana, mana regen, attack damage, attack speed, armor, and magic resist.Leveling up also grants skill points which are used to increase the power of a champion's QWER abilities.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Ashe-Skill-up.jpg"/> 
+					The effect of skill points can be dependent on the champion and the ability itself. In the example above for Ashe's W, Volley, increasing from ability level 1 to 2 will yield an increase of damage from 20 to 35 and a reduction in CDR from 15 to 12.5 seconds.</p>
+					
+					<h3>Summoner Spells</h3>
+					<p>Beyond their QWER abilities, every summoner also must choose two summoner spells for their champion. Summoner spells act as two additional abilities with their own purposes and cooldowns.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/all-Summoner-spells.jpg"/> 
+					They offer flexibility in helping you adapt at champ select and allow you to play toward your preferred playstyle. When you first start playing, you'll gradually unlock them over time (check out the section at the bottom for more info). In this section, we'll be going over what each one does and why you'd want to take it.</p>
+					
+						<h4>Heal (240 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Heal.jpg"/> 
+						<ul>
+							<li>Heal instantly replenishes some of your health (based on your level) and increases your movement speed by 1%.</li>
+							<li>It also heals one other ally. You can choose which one it targets by hovering them when you cast Heal. If you don't specifically with your cursor it will automatically heal the ally closet to dying.</li>
+							<li>This is most commonly seen at a bot lane by the ADC role or sometimes, the Support role. This is because it heals two allies at once, giving it more value there than compared to other roles.</li>
+						</ul></p>
+						
+						<h4>Ghost (180 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Ghost.jpg"/> 
+						<ul>
+							<li>This summoner spell grants a large amount of increased movement speed (based on level) for 10 seconds and allows you to run through units (champions, monsters, minions).</li>
+							<li>Ghost makes a great choice for champions that rely on chasing down their opponents or want to stay at a safe distance.</li>
+							<li>It's a lot less flexible than its counterpart, Flash, so you'll often see it paired with Flash rather than replacing it.</li>
+						</ul></p>
+						
+						<h4>Barrier (180 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Barrier.jpg"/> 
+						<ul>
+							<li>Barrier instantly grants you a shield (based on your level) that is great for mitigating burst damage.</li>
+							<li>You'll often see Barrier for the Mid lane role but it's also taken by ADCs and Supports.</li>
+						</ul></p>
+						
+						<h4>Exhaust (210 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Exhaust.jpg"/> 
+						<ul>
+							<li>Exhaust slows a champion and reduces their damage output by 40% over 2.5 seconds.</li>
+							<li>This is primarily used defensively but can be used as a crowd control option for chasing opponents.</li>
+						</ul></p>
+						
+						<h4>Flash (300 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Flash.jpg"/> 
+						<ul>
+							<li>Flash is by far the most popular summoner spell. It allows you to blink a short distance in any direction.</li>
+							<li>This may sound very simple at first but the flexibility Flash offers let's it be equally viable in offensive and defensive situations.</li>
+							<li>You can use it to engage and surprise an enemy, or use it to escape over a wall or out of harm's way.</li>
+						</ul></p>
+						
+						<h4>Teleport (360 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Teleport.jpg"/> 
+						<ul>
+							<li>This summoner spell allows you to instantly teleport to an allied ward, minion, or tower.</li>
+							<li>Be aware that this takes 4-seconds to channel and it can be interrupted by a stun or other forms of crowd control.</li>
+						</ul></p>
+						
+						<h4>Smite (210 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Smite.jpg"/> 
+						<ul>
+							<li>Smite allows you to instantly cast a high burst damage spell upon a minion, monster, or pet (a minion controlled by a champion's abilities).</li>
+							<li>This is a jungler's core summoner spell and is required in order to play the role.</li>
+							<li>Smiting objectives (see the objectives section) allows you to secure them more reliably to get the last-hit before your foes.</li>
+							<li>It also helps clear jungle camps and offers increased damage or a slow based on the jungle item upgrade you purchase.</li>
+						</ul></p>
+						
+						<h4>Cleanse (210 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Cleanse.jpg"/> 
+						<ul>
+							<li>This summoner spell is sort of like a get out of jail free card as it removes all disables (except for being airborne from knockouts or being suppressed).</li>
+							<li>It allows you to get out of an otherwise tight situation and also increases your tenacity, which means that it makes you temporarily resistant to additional incoming crowd control effects.</li>
+						</ul></p>
+						
+						<h4>Ignite (180 second cooldown)</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/ignite.jpg"/> 
+						<ul>
+							<li>Ignite is a spell that lasts over 5 seconds and inflicts burning damage.</li>
+							<li>It can often help you secure a kill as an enemy is trying to escape if you're able to land it in time.</li>
+							<li>It also decreases the amount of healing a champion can receive so it's useful against champions with healing effects.</li>
+							<li>This also implies that it counters the Heal spell, just make sure to cast Ignite before the Heal goes off.</li>
+						</ul></p>
+					
+					<h3>Runes</h3>
+					<p>League of Legends is all about discovering the best way for you to play based on your personal preferences. On top of summoner spells, runes provide another way for you to tune your champion to either maximize their strengths or to help keep their weaknesses in check.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Runes.jpg"/> 
+					In this section, we'll be covering the overarching themes of each of the five main rune trees and explaining how to equip rune pages.The five rune trees are Precision, Domination, Sorcery, Resolve, and Inspiration.</p>
+						<h4>Precision</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Precision.jpg"/> 
+						<ul>
+							<li>Focuses on empowering auto-attacks making it ideal for ranged carries like Ashe or a melee fighter like Tryndamere.</li>
+							<li>Example: Press the Attack rewards you for continuously attacking the same target by increasing your overall damage output.</li>
+						</ul></p>
+						
+						<h4>Domination</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Domination.jpg"/> 
+						<ul>
+							<li>Improves your ability to instantly burst or kill a target, it's no surprise that you'll often see assassins like Katarina or Talon take Domination.</li>
+							<li>Example: Predator grants you a huge burst of movement speed to allow you to quickly chase down your prey.</li>
+						</ul></p>
+						
+						<h4>Sorcery</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Sorcery.jpg"/> 
+						<ul>
+							<li>Sorcery augments your abilities but also provides a good amount of utility. It's most commonly taken by mages and casters like Karma or Lux.</li>
+							<li>Example: Summon Aery improves the punch of your spells and also increases the potency of supportive spells by shielding an ally you cast on.</li>
+						</ul></p>
+						
+						<h4>Resolve</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Resolve.jpg"/> 
+						<ul>
+							<li>If you're looking to bolster your defensive capabilities, this is your rune. Beefy tanks and engagers like Nautilus and Leona love the Resolve tree.</li>
+							<li>Example: Aftershock provides a burst of bonus armor and magic resist if you immobilize an enemy.</li>
+						</ul></p>
+						
+						<h4>Inspiration</h4>
+						<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Inspiration.jpg"/> 
+						<ul>
+							<li>Inspiration is all about breaking the rules with wacky powers and capabilities. It can be used by many different champions but is very situational.</li>
+							<li>Example: Unsealed Spellbook allows you to switch your summoner spells to other ones, rewarding your ability to adapt and think ahead.</li>
+						</ul></p>
+					<p><img src="https://cdnportal.mobalytics.gg/production/2019/06/Rune-page.jpg"/> 
+					<p>At summoner level 10, you'll receive full access to customize your rune page. You can create a rune page in your client outside of game or during champ select. Either way, your created rune page will stay saved until you delete it for another one or change it.When creating a rune page there are three main components:</p>
+					<ul>
+						<li>Primary tree</li>
+						<li>Secondary tree</li>
+						<li>Shards</li>
+					</ul>
+					<p>Note that choosing runes can be tricky because you can only choose one rune per row, so make sure to keep that in mind.The primary tree grants you access to a rune tree's most powerful choices, known as a keystone. In total, you'll get four rune choices from your primary tree so make sure they're in line with what your champion excels at.The secondary tree only provides you with two choices, you'll want to use this to compliment your primary tree.Lastly, you get three choices of shards. Shards provide a little bit of flexibility independent of the five trees. For example, you can choose between having additional raw damage, more attack speed, or shorter cooldowns.Shards aren't as powerful as your primary and secondary tree but can allow you to have more flexibility to cater to your playstyle or help prepare you against a bad matchup.
+					<img src="https://cdnportal.mobalytics.gg/production/2019/06/Ashe-rune-build.jpg"/>
+					A suggested rune build from <a href="https://mobalytics.gg/champions/ashe/build">Ashe's champion page</a>.Understanding optimal rune builds can be difficult, especially as a beginner. Be sure to try them all out and check out our <a href="https://mobalytics.gg/champions">champion pages</a> where we curate and constantly update the best rune pages for every role.</p>
+					<br />
+					<p><cite>Source:
+					<ul>
+						<li><a href="https://mobalytics.gg/blog/absolute-beginners-guide-to-league-of-legends/" target="_blank">MOBALYTIC BLOG</a>.</li>
+						<li><a href="https://nfhs.org/media/1020428/what-is-league-of-legends_.pdf" target="_blank">https://nfhs.org/media/1020428/what-is-league-of-legends_.pdf</a></li>
+						<li><a href="https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/" target="_blank">https://www.leagueoflegends.com/en-us/news/game-updates/2024-gameplay-preview/</a></li>
+					</ul>
+						</cite></p>
+					<br />
+					<i><time datetime="2024-10-17 1:00">Posted on October 17th, 2024, 1:00am</time></i>
+				</article>
+			</main>
+		</div>
+		
+		<footer>
+			<p>&copy; 2024 Joey's Blog</p>
+		</footer>
+	 
+</body>
+</html>
